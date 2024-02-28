@@ -1,0 +1,32 @@
+<!-- friend-request.component.html -->
+
+<h1 class="bg-light m-4 p-4">Friend Request From Company Come HERE </h1><p>if blank then there is no friend request</p>
+
+
+
+
+<div class="friend-request card mb-3 shadow-sm" *ngFor="let requestData of PendingReq">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img [src]="requestData.cLogo" alt="Company Logo" class="img-fluid rounded-start" style="width: 80%; height: 50vh;">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h3 class="card-title">{{requestData.cname}}</h3>
+                <p class="card-text">Email: {{requestData.cEmail}}</p>
+                <p class="card-text">Contact: {{requestData.cContact}}</p>
+                <p class="card-text">Established Date: {{requestData.cEstablishedDate | date:'medium'}}</p>
+                <p class="card-text">Website: {{requestData.cUrl}}</p>
+                <hr>
+                <h5 class="card-title">{{requestData.rName}}</h5>
+                <p class="card-text">Email: {{requestData.rEmail}}</p>
+                <p class="card-text">Phone: {{requestData.rPhone1}}</p>
+                <p class="card-text">Register Date: {{requestData.rRegisterDate | date:'medium'}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-primary" (click)="Accept_Company(requestData.cid)">Accept</button>
+        <!-- <button class="btn btn-secondary" (click)="rejectRequest()">Reject</button> -->
+    </div>
+</div>

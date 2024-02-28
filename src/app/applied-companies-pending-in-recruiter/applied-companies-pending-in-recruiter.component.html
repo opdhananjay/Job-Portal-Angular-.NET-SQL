@@ -1,0 +1,23 @@
+<div class="container">
+    <h1 class="bg-light m-4 p-4">When Company Accept it's going to show in Manage Company</h1>
+
+    <div class="card mb-4 shadow" *ngFor="let a of AllData">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img [src]="a.cLogo" class="card-img-top" alt="Company Logo" style="max-height: 200px;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ a.cname }}</h5>
+                    <p class="card-text"><strong>Email:</strong> {{ a.cEmail }}</p>
+                    <p class="card-text"><strong>Contact:</strong> {{ a.cContact }}</p>
+                    <hr>
+                    <p class="card-text"><strong>Established Date:</strong> {{ a.cEstablishedDate | date:'medium' }}</p>
+                    <hr>
+                    <p class="card-text"><strong>URL:</strong> <a [href]="a.cUrl" target="_blank">{{ a.cUrl }}</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

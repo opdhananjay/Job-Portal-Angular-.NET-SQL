@@ -1,0 +1,75 @@
+<nav class="navbar navbar-lg">
+    <div class="container">
+        <a class="navbar-brand" href="" style="font-family: 'Courier New', Courier, monospace;"><b>Job Finder</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown text-nowrap">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Recruiters
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#" routerLink="/RecruiterLogin">Login</a></li>
+                        <li><a class="dropdown-item" href="#" routerLink="/RecruiterRegistration">Registration</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown text-nowrap">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Company
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#" routerLink="/CompanyLogin">Login</a></li>
+                        <li><a class="dropdown-item" href="#" routerLink="/CompanyRegistration">Registration</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#">
+                        About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<h1 class="text-center bg-primary-subtle px-3 py-4 mx-1" style="font-family: 'Courier New', Courier, monospace;"><b>Top Listed Companies</b></h1>
+<div class="container" style="background-color: cadetblue;">
+    <div class="card company-card mt-4 py-3 px-4" *ngFor="let a of All_companies">
+        <div class="row no-gutters">
+            <div class="col-md-3 ">
+                <img src="{{a.cLogo}}" class="card-img company-logo" alt="Company Logo">
+            </div>
+            <div class="col-md-3 ">
+                <div class="card-body company-details">
+                    <h5 class="card-title company-name" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">{{a.cname}}</h5>
+                    <p class="card-text company-email" style="font-family: 'Times New Roman', Times, serif;">{{a.cEmail}}</p>
+                    <!-- <input [(ngModel)]="selectedCompanyId" hidden> -->
+
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-items-center ">
+                <h5>{{a.cEstablishedDate}}</h5>
+            </div>
+            <div class="col-md-3 d-flex align-items-center ">
+                <button class="btn btn-lg btn-primary ms-5" style="width: 50%; font-weight: 500;"  (click)="sentFriendRequest(a.cid)"  [ngClass]="{'btn-clicked': isButtonClicked(a.cid)}">Apply</button>
+            </div>
+        </div>
+    </div>
+ 
+</div>
+
+<!-- Bootstrap JS and Popper.js scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

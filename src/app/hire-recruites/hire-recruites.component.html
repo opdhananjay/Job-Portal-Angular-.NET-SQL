@@ -1,0 +1,82 @@
+<!-- <div class="horizontal-card" *ngFor="let recruiter of recruiter1" [@fadeInOut]>
+    <img [src]="recruiter.rPicUrl" alt="Profile Picture">
+    <div class="card-details">
+      <h4>{{ recruiter.rName }}</h4>
+      <p>Email: {{ recruiter.rEmail }}</p>
+      <p>Phone: {{ recruiter.rPhone1 }}</p>
+      <p>Alternative Phone: {{ recruiter.rPhone2 || 'N/A' }}</p>
+      <p>Registration Date: {{ recruiter.rRegisterDate | date }}</p>
+    </div>
+  </div>
+   -->
+<!-- 
+   <div class="card ms-5 me-5 mt-2" *ngFor="let recruiter of recruiter1">
+    <div class="row g-0">
+        <div class="col">
+            <img [src]="recruiter.rPicUrl" alt="Profile Picture">
+        </div>
+        <div class="col-md-*">
+                <div class="card-body">
+                    <h4>{{ recruiter.rName }}</h4>
+      <p>Email: {{ recruiter.rEmail }}</p>
+      <p>Phone: {{ recruiter.rPhone1 }}</p>
+      <p>Alternative Phone: {{ recruiter.rPhone2 || 'N/A' }}</p>
+      <p>Registration Date: {{ recruiter.rRegisterDate | date }}</p>
+                </div>
+         </div>
+    </div>
+  </div> -->
+
+  <!-- Button trigger modal -->
+<button type="button " class="btn btn-primary col-md-3 m-3" routerLink="/fr" data-bs-toggle="modal" data-bs-target="#exampleModal">
+   See Accepted Recruiters
+  </button>
+  
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+
+
+  <div class="container">
+    <div class="row">
+        <!-- Repeat this card for each job item -->
+        <div class="col-md-6" *ngFor="let a of recruiter1">
+            <div class="card horizontal-card">
+                <div class="card-body" style="background-color:beige; margin: 1%;">
+                    <h5 class="card-title px-4 py-2" style="font-size:100%;color: aliceblue; background-color:rgb(4, 104, 104); font-family: 'Courier New', Courier, monospace;"><u><i><b>{{a.jobdesc}}-{{a.jobId}}</b></i></u></h5>
+                    <!-- <h6 class="card-subtitle mb-4 text-muted" >ABC Inc.</h6> -->
+                    <div class="col">
+                        <img [src]="a.rPicUrl" alt="Profile Picture" width="80%" height="300px" style="border-radius: 50%;">
+                    </div>
+                    <p class="card-text">
+                        <h4>{{ a.rName }}</h4>
+                        <p>Email: {{ a.rEmail }}</p>
+                        <p>Phone: {{ a.rPhone1 }}</p>
+                        <p>Alternative Phone: {{ a.rPhone2 || 'N/A' }}</p>
+                        <p>Registration Date: {{ a.rRegisterDate | date }}</p>
+                    
+                    <!-- <p class="card-text">We are looking for a skilled Software Engineer...</p> -->
+                    <a  class="btn btn-primary " style="width: 50%;justify-items: center;"  (click)="sendFriendrequesttoRecruiter(a.rid)"  >Request Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,159 @@
+
+<nav class="navbar navbar-expand-sm bg-light">
+
+    <a href="" routerLink="./RecruiterHome" class="navbar-brand">
+        <img [src]="compProfile" alt="" width="100rem" class="ms-4">
+        <!-- <h3 class="ms-3">Comapny Logo</h3> -->
+    </a>
+   
+    <button class="navbar-toggler me-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+
+        <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+
+        <ul class="navbar-nav">
+
+           
+
+            <li class="nav-item text-nowrap"><a  class="nav-link" routerLink="/HireR" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Hire Recruiter
+            </a></li>
+
+            <li class="nav-item text-nowrap"><a  class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLink="/AppliedRecruitersOnCompany">Applied Recruiters</a></li>
+
+            <a href="/"  class="nav-link"  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"></a>
+
+            <li class="nav-item text-nowrap"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Profile
+              </button></li>
+
+            <li class="nav-item  text-nowrap" ><a  class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="logOut_company()">Logout</a></li>
+
+        </ul> 
+
+    </div>
+</nav>
+
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Company Profile[UnEditable]</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" *ngFor="let c of compDetails">
+            <div class="row"  >
+                <!-- Left side - Your Profile -->
+                <!-- <div class="col-md-4">
+                    <img [src]="compProfile" alt="Company Logo" width="60%" height="70vh" class="img-fluid mb-3">
+                    Add other company profile details here -->
+                <!-- </div> -->
+<!--  -->
+                <!-- Right side - Other Details -->
+                <div class="col-md-8">
+                    <!-- <p><strong>Company Name:</strong> {{ c.cname }}</p>
+                    <p><strong>Email:</strong> {{ c.cEmail }}</p> 
+                    <p><strong>Password:</strong> {{ c.cPassword }}</p>
+                    <p><strong>Contact:</strong> {{ c.cContact }}</p>
+                    <p><strong>Creation Date:</strong> {{ c.cCreationDate | date:'medium' }}</p>
+                    <p><strong>Established Date:</strong> {{ c.cEstablishedDate | date:'medium' }}</p>
+                    <p><strong>Last Login:</strong> {{ c.cLastLogin }}</p>
+                    <p><strong>URL:</strong> {{ c.cUrl }}</p>
+                    <p><strong>Approval Status by Admin:</strong> {{ c.approveStatusByAdmin }}</p>
+                   
+                    Add other details as needed -->
+
+                    <form [formGroup]="form" style="animation: slideInRight 1s;">
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+                          <!-- Recruiter's Name -->
+                          <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                            <div class="form-outline">
+                              <label class="form-label" for="firstName">Name</label>
+                              <input type="text" formControlName="CName" class="form-control form-control-lg">
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <div class="col-md-3 border-right">
+                          <!-- Profile Picture Upload -->
+                          <span>
+                            <img class="rounded-circle mt-5" width="150px" [src]="form.get('Clogo').value" (click)="openFileInput.click()">
+                            <i class="fa fa-upload" style="width: 100px;" aria-hidden="true">Upload</i>
+                            <input type="file" id="profilePicture" name="pic" accept="image/*" style="display: none;" (change)="onFileSelected($event)" #openFileInput>
+                          </span>
+                    
+                          <!-- Progress Bar -->
+                          <div class="progress-container">
+                            <div class="progress-bar"></div>
+                          </div>
+                        </div>
+                    
+                        <div class="col-md-6 mb-4">
+                          <!-- Primary Phone -->
+                          <div class="form-outline">
+                            <input type="text" class="form-control form-control-lg" formControlName="CContact" />
+                            <label class="form-label" for="lastName">Primary Phone</label>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <!-- Alternative Number -->
+                      <div class="row">
+                        <div class="col-md-6 mb-4 d-flex align-items-center">
+                          <div class="form-outline datepicker w-100">
+                            <input type="text" class="form-control form-control-lg" formControlName="CUrl"/>
+                            <label for="Alternative Number" class="form-label">Company Website</label>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <!-- Registered Date and Email -->
+                     
+                    
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input type="text" class="form-control form-control-lg" formControlName="CEmail" readonly />
+                            <label class="form-label" for="lastName">Email</label>
+                          </div>
+                        </div>
+                      
+                    
+                      <!-- Password -->
+                      <div class="row">
+                        <div class="col-md-6 mb-4 pb-2">
+                          <div class="form-outline">
+                            <input type="text" class="form-control form-control-lg" formControlName="CPassword" />
+                            <label class="form-label">Password</label>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    
+
+
+                  
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary"  (click)=" updateProfile()" >Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ <!-- Access the user's ID or other user-related data -->
+ <!-- <div>User ID: {{ Recuiter.getUserId() }}</div> -->

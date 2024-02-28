@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for card design and animation */
+        .horizontal-card {
+            margin: 20px;
+            animation: fadeIn 1s ease-in-out; /* Add a fade-in animation */
+        }
+
+        /* Keyframes for fadeIn animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Additional styling for horizontal layout */
+        .horizontal-card .card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Repeat this card for each job item -->
+            <div class="col-md-6" *ngFor="let a of jobData">
+                <div class="card horizontal-card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{a.jobRole}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">ABC Inc.</h6>
+                        <p class="card-text">
+                            <strong>Location:</strong> {{a.jobCity}}<br>
+                            <strong>Industry:</strong> {{a.industryType}}<br>
+                            <strong>Department:</strong> {{a.department}}<br>
+                            <strong>Qualification:</strong>{{a.jobQualification}}<br>
+                            <strong>Experience:</strong> {{a.jobMinExperience}} - {{a.jobMaxExperience}} years<br>
+                            <strong>Salary:</strong> {{a.jobMinSalary}} - {{a.jobMaxSalary}}<br>
+                            <strong>Employment Type:</strong> {{a.employementType}}<br>
+                            <strong>Position Date:</strong> {{a.positionDate}}<br>
+                            <strong>Expiration Date:</strong> {{a.expirationdate}}
+                        </p>
+                        <p class="card-text">{{a.jobdesc}}</p>
+                        <!-- <a href="#" class="btn btn-primary"  >View Details</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional, for advanced features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+<h2 class="text-center mt-5">Applied Candiates</h2>
+
+
+
+
+
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>UserApplicationId</th>
+        <th>userApplyDate</th>
+        <th>userStatus</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of AppliedCandidates">
+        <td>{{a.userApplicationId}}</td>
+        <td>{{a.userApplyDate}}</td>
+        <td>{{a.userStatus}}</td>
+        <td><button class="btn btn-secondary">Profile</button></td>
+        <td><button class="btn btn-secondary">Skills</button></td>
+        <td><button class="btn btn-secondary">Education</button></td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,273 @@
+<nav class="navbar navbar-expand-sm bg-light">
+
+    <a href="" routerLink="" class="navbar-brand">
+        <!-- <img src="" alt="" width="100rem" class="ms-4"> -->
+        <h3 class="ms-3">Comapny Logo</h3>
+    </a>
+
+    <button class="navbar-toggler me-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+
+        <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+
+        <ul class="navbar-nav">
+
+            <li class="nav-item text-nowrap"><a href="/" class="nav-link" data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"><button type="button" class="btn btn-primary"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        POST JOB
+                    </button></a>
+                </li>
+
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Job Post</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                         
+                            <div class="container mt-5">
+                                <form  #reg="ngForm">
+                                  <!-- Job Role -->
+                                  <div class="mb-3">
+                                    <label for="jobRole" class="form-label">Job Role</label>
+                                    <input type="text" class="form-control" id="jobRole" name="jobRole" placeholder="Software Engineer" [(ngModel)]="body1.jobRole" required minlength="3" maxlength="50">
+
+                                  </div>
+                                  
+                                 
+                                  
+                                  <!-- Company Name -->
+                                  <div class="mb-3">
+                                    <label for="companyName" class="form-label">Company Name</label>
+                                    <input type="text" class="form-control" id="companyName" name="companyName" placeholder="ABC Corporation" [(ngModel)]="body1.companyName"  required>
+                                  </div>
+                                  
+                                  <!-- Job Address Line 1 -->
+                                  <div class="mb-3">
+                                    <label for="jobAddressLine1" class="form-label">Job Address Line 1</label>
+                                    <input type="text" class="form-control" id="jobAddressLine1" name="jobAddressLine1" placeholder="123 Main Street" [(ngModel)]="body1.jobAddressLine1"  required>
+                                  </div>
+                                  
+                                  <!-- Job Address Line 2 -->
+                                  <div class="mb-3">
+                                    <label for="jobAddressLine2" class="form-label">Job Address Line 2</label>
+                                    <input type="text" class="form-control" id="jobAddressLine2" name="jobAddressLine2" [(ngModel)]="body1.jobAddressLine2"  placeholder="Suite 456">
+                                  </div>
+                                  
+                                  <!-- Job State -->
+                                  <div class="mb-3">
+                                    <label for="jobState" class="form-label">Job State</label>
+                                    <input type="text" class="form-control" id="jobState" name="jobState" [(ngModel)]="body1.jobState"  placeholder="California">
+                                  </div>
+                                  
+                                  <!-- Job Pin Code -->
+                                  <div class="mb-3">
+                                    <label for="jobPinCode" class="form-label">Job Pin Code</label>
+                                    <input type="number" class="form-control" id="jobPinCode" name="jobPinCode" [(ngModel)]="body1.jobPinCode"  placeholder="12345">
+                                  </div>
+                                  
+                                  <!-- ... Add similar form controls for other properties -->
+                                  
+                                  <div class="mb-3">
+                                    <label for="jobCity" class="form-label">Job City</label>
+                                    <input type="text" class="form-control" id="jobCity" name="jobCity" [(ngModel)]="body1.jobCity"  placeholder="San Francisco" required>
+                                  </div>
+                                  
+                                  <!-- Industry Type -->
+                                  <div class="mb-3">
+                                    <label for="industryType" class="form-label">Industry Type</label>
+                                    <input type="text" class="form-control" id="industryType" name="industryType" [(ngModel)]="body1.industryType"  placeholder="Technology" required>
+                                  </div>
+                                  
+                                  <!-- Department -->
+                                  <div class="mb-3">
+                                    <label for="department" class="form-label">Department</label>
+                                    <input type="text" class="form-control" id="department" name="department" [(ngModel)]="body1.department"  placeholder="Software Development" required>
+                                  </div>
+                                  
+                                  <!-- Job Qualification -->
+                                  <div class="mb-3">
+                                    <label for="jobQualification" class="form-label">Job Qualification</label>
+                                    <input type="text" class="form-control" id="jobQualification" name="jobQualification" [(ngModel)]="body1.jobQualification"  placeholder="Bachelor's in Computer Science" required>
+                                  </div>
+                                  
+                                  <!-- Job Experience -->
+                                  <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                      <label for="jobMinExperience" class="form-label">Minimum Experience</label>
+                                      <input type="number" class="form-control" id="jobMinExperience" name="jobMinExperience" [(ngModel)]="body1.jobMinExperience"  placeholder="2" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                      <label for="jobMaxExperience" class="form-label">Maximum Experience</label>
+                                      <input type="number" class="form-control" id="jobMaxExperience" name="jobMaxExperience" [(ngModel)]="body1.jobMaxExperience"  placeholder="5" required>
+                                    </div>
+                                  </div>
+                                  
+                                  <!-- Job Salary -->
+                                  <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                      <label for="jobMinSalary" class="form-label">Minimum Salary</label>
+                                      <input type="number" class="form-control" id="jobMinSalary" name="jobMinSalary" [(ngModel)]="body1.jobMinExperience"  placeholder="60000" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                      <label for="jobMaxSalary" class="form-label">Maximum Salary</label>
+                                      <input type="number" class="form-control" id="jobMaxSalary" [(ngModel)]="body1.jobMaxSalary"  name="jobMaxSalary" placeholder="80000" required>
+                                    </div>
+                                  </div>
+                                  
+                                  <!-- Job Openings -->
+                                  <div class="mb-3">
+                                    <label for="jobOpenings" class="form-label">Job Openings</label>
+                                    <input type="number" class="form-control" id="jobOpenings" [(ngModel)]="body1.jobOpenings"  name="jobOpenings" placeholder="3" required>
+                                  </div>
+                                  
+                                  <!-- Employment Type -->
+                                  <div class="mb-3">
+                                    <label for="employementType" class="form-label">Employment Type</label>
+                                    <input type="text" class="form-control" id="employementType" name="employementType" [(ngModel)]="body1.employementType"  placeholder="Full-time" required>
+                                  </div>
+                                  
+                                  <!-- Position Date -->
+                                  <div class="mb-3">
+                                    <label for="positionDate" class="form-label">Position Date</label>
+                                    <input type="date" class="form-control" id="positionDate" name="positionDate" [(ngModel)]="body1.positionDate"  placeholder="2023-12-01" required>
+                                  </div>
+                                  
+                                  <!-- Expiration Date -->
+                                  <div class="mb-3">
+                                    <label for="expirationdate" class="form-label">Expiration Date</label>
+                                    <input type="date" class="form-control" id="expirationdate" name="expirationdate" [(ngModel)]="body1.expirationdate"  placeholder="2024-01-01" required>
+                                  </div>
+                                  
+                                  <!-- Job Description -->
+                                  <div class="mb-3">
+                                    <label for="jobdesc" class="form-label">Job Description</label>
+                                    <textarea class="form-control" id="jobdesc" name="jobdesc" placeholder="We are looking for a skilled Software Engineer..." [(ngModel)]="body1.jobdesc"  required></textarea>
+                                  </div>
+                                  
+                                  <!-- RC ID -->
+                                  <div class="mb-3">
+                                    <label for="rcId"  class="form-label">RC ID</label>
+                                    <input type="number" class="form-control"  id="rcId" name="rcId" placeholder="9876" [(ngModel)]="body1.rcId" readonly  required>
+                                  </div>
+                                  
+                              
+                                  <button type="submit" class="btn btn-primary" (click)="job_post()">Submit</button>
+                                </form>
+                              </div>
+                              
+
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    
+
+
+
+            <li class="nav-item  text-nowrap"><a class="nav-link" data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"><button type="button" class="btn btn-primary"
+                        >
+                        LogOut
+                    </button></a></li>
+
+        </ul>
+
+    </div>
+</nav>
+
+
+
+<!-- Access the user's ID or other user-related data -->
+<!-- <div>User ID: {{ Recuiter.getUserId() }}</div> -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for card design and animation */
+        .horizontal-card {
+            margin: 20px;
+            animation: fadeIn 1s ease-in-out; /* Add a fade-in animation */
+        }
+
+        /* Keyframes for fadeIn animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Additional styling for horizontal layout */
+        .horizontal-card .card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Repeat this card for each job item -->
+            <div class="col-md-6" *ngFor="let a of allJobs">
+                <div class="card horizontal-card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{a.jobRole}} - {{a.jobId}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">ABC Inc.</h6>
+                        <p class="card-text">
+                            <strong>Location:</strong> {{a.jobCity}}<br>
+                            <strong>Industry:</strong> {{a.industryType}}<br>
+                            <strong>Department:</strong> {{a.department}}<br>
+                            <strong>Qualification:</strong>{{a.jobQualification}}<br>
+                            <strong>Experience:</strong> {{a.jobMinExperience}} - {{a.jobMaxExperience}} years<br>
+                            <strong>Salary:</strong> {{a.jobMinSalary}} - {{a.jobMaxSalary}}<br>
+                            <strong>Employment Type:</strong> {{a.employementType}}<br>
+                            <strong>Position Date:</strong> {{a.positionDate}}<br>
+                            <strong>Expiration Date:</strong> {{a.expirationdate}}
+                        </p>
+                        <p class="card-text">We are looking for a skilled Software Engineer...</p>
+                        <a href="#" class="btn btn-primary" (click)="Get_job_id(a.jobId)" routerLink="/ViewJob" >View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional, for advanced features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

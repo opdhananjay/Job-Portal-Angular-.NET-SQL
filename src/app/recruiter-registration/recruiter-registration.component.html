@@ -1,0 +1,175 @@
+<!-- <section>
+
+    <title>Recruiter Registration</title>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2>Recruiter Registration</h2>
+                <form enctype="multipart/form-data" #reg="ngForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name" required [(ngModel)]="body.name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required [(ngModel)]="body.email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password"
+                            required [(ngModel)]="body.password">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone1">Phone 1</label>
+                        <input type="text" class="form-control" id="phone1" name="phone1" placeholder="Enter your phone number"
+                            required [(ngModel)]="body.phone1">
+                    </div>
+                    <div class="form-group">
+                        <label for="altPhone">Alternative Phone</label>
+                        <input type="text" class="form-control" id="altPhone"
+                            placeholder="Enter your alternative phone number" name="aphone" [(ngModel)]="body.alternativePhone">
+                    </div>
+                    <div class="form-group">
+                        <label for="profilePicture">Profile Picture</label>
+                        <input type="file" value="recruiterimg" id="profilePicture" name="pic" accept="image/*" (change)="onFileSelected($event)" >
+                    </div>
+                    <button type="submit" class="btn btn-primary" (click)="postRecruiterRegistration()">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</section> -->
+
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="" style="font-family: 'Courier New', Courier, monospace;"><b>Job Finder</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown text-nowrap">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Recuiters
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+  
+              <li><a class="dropdown-item" href="#" routerLink="/RecruiterLogin">Login</a></li>
+              <li><a class="dropdown-item" href="#" routerLink="/RecruiterRegistration">Registration</a></li>
+  
+            </ul>
+          </li>
+          <li class="nav-item dropdown text-nowrap">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Company
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+  
+              <li><a class="dropdown-item" href="#" routerLink="/CompanyLogin">Login</a></li>
+              <li><a class="dropdown-item" href="#" routerLink="/CompanyRegistration">Registration</a></li>
+  
+            </ul>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button class="btn0">Register</button>
+          <button class="btn1 mx-2">Login</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<section class="pt-5">
+    <div class="container align-items-center py-5 px-5 bg-primary-subtle">
+         <div class="card bg-light bg-light">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <h4 class="card-title mt-3 text-center"style="font-family: 'Courier New', Courier, monospace; font-weight: 600;"class=" w-100 fs-6 mb-2">Recruiter Registration !!!</h4>
+            <form>
+            <div class="form-group input-group py-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                 </div>
+                 <input type="text" class="form-control" name="name" id="name" placeholder="Full name" required [(ngModel)]="body.name">
+            </div> 
+            <div class="form-group input-group py-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                 </div>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email address" required [(ngModel)]="body.email">
+
+            </div> 
+            <div class="form-group input-group py-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                </div>
+                <select class="custom-select" style="max-width: 120px;">
+                    <option selected="">+91</option>
+                    <option value="1">+92</option>
+                    <option value="2">+98</option>
+                    <option value="3">+71</option>
+                </select>
+                <input type="text" class="form-control" id="phone1" name="phone1" placeholder="Enter your phone number"
+                required [(ngModel)]="body.phone1">
+            </div>
+            <div class="form-group input-group py-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                </div>
+                <select class="custom-select" style="max-width: 120px;">
+                    <option selected="">+91</option>
+                    <option value="1">+92</option>
+                    <option value="2">+98</option>
+                    <option value="3">+71</option>
+                </select>
+                <input type="text" class="form-control" id="altPhone"
+                placeholder="Enter your alternative phone number" name="aphone" [(ngModel)]="body.alternativePhone">
+            </div>  
+            <div class="form-group input-group py-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password"
+                required [(ngModel)]="body.password">
+            </div>         
+            <div class="form-group input-group py-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class=" fa fa-user-circle"></i> </span>
+                </div>
+                <!-- <label for="">Profile Picture</label> -->
+                <input  type="file" value="recruiterimg" id="profilePicture" name="pic" accept="image/*" (change)="onFileSelected($event)">
+               </div>                           
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block w-100" (click)="postRecruiterRegistration()"> Create Account  </button>
+            </div>     
+            <p class="text-center">Have an account? <a href="/">Log In</a> </p>                                                                 
+        </form>
+        </article>
+        </div> 
+        
+        </div> 
+    </section>

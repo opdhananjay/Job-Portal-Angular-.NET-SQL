@@ -1,0 +1,184 @@
+<!-- <section>
+
+    <title>Company Registration</title>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="mb-4">Company Registration</h2>
+                <form enctype="multipart/form-data" #reg="ngForm">
+                    <div class="form-group">
+                        <label for="name">Comapny Name</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name" required [(ngModel)]="body.cName">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required [(ngModel)]="body.cEmail">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password"
+                            required [(ngModel)]="body.cPassword">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone1">Established Date</label>
+                        <input type="date" class="form-control" id="phone1" name="phone1" placeholder="Enter your phone number"
+                            required [(ngModel)]="body.cEstablishedDate" [(ngModel)]="body.cEstablishedDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="altPhone">Phone</label>
+                        <input type="text" class="form-control" id="altPhone"
+                            placeholder="Enter your alternative phone number" name="aphone" [(ngModel)]="body.cContact" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profilePicture">Comapany Picture</label>
+                        <input type="file" value="recruiterimg" id="profilePicture" name="pic" accept="image/*" (change)="onFileSelect($event)">
+                    </div>
+                    <div class="form-group">
+                        <label for="altPhone">Website Url</label>
+                        <input type="text" class="form-control" id="curl"
+                            placeholder="Enter your alternative phone number" name="aphone" [(ngModel)]="body.cUrl" >
+                    </div>
+                    <button type="submit" class="btn btn-primary" (click)="postCompanyRegistration()" >Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section> -->
+
+
+
+
+<nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="" style="font-family: 'Courier New', Courier, monospace;"><b>Job Finder</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown text-nowrap">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Recuiters
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+
+            <li><a class="dropdown-item" href="#" routerLink="/RecruiterLogin">Login</a></li>
+            <li><a class="dropdown-item" href="#" routerLink="/RecruiterRegistration">Registration</a></li>
+
+          </ul>
+        </li>
+        <li class="nav-item dropdown text-nowrap">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Company
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+
+            <li><a class="dropdown-item" href="#" routerLink="/CompanyLogin">Login</a></li>
+            <li><a class="dropdown-item" href="#" routerLink="/CompanyRegistration">Registration</a></li>
+
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#">
+            About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <button class="btn0">Register</button>
+        <button class="btn1 mx-2">Login</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<section class="h-100 bg-white">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                  alt="Sample photo" class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5"style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Company Registration</h3>
+                  <form enctype="multipart/form-data" #reg="ngForm">
+                    <div class="row">
+                      <div class="mb-4 py-1">
+                        <div class="form-outline">
+                          <div class="form-group">
+                            <label for="name"style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Comapny Name</label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name"
+                              required [(ngModel)]="body.cName">
+                          </div>
+                          <div class="form-group py-2">
+                            <label for="email"style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Email</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                              placeholder="Enter your email" required [(ngModel)]="body.cEmail">
+                          </div>
+                          <div class="form-group py-2">
+                            <label for="password"style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Password</label>
+                            <input type="password" class="form-control" name="password" id="password"
+                              placeholder="Enter your password" required [(ngModel)]="body.cPassword">
+                          </div>
+                          <div class="form-group py-2">
+                            <label for="phone1"style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Established Date</label>
+                            <input type="date" class="form-control" id="phone1" name="phone1"
+                              placeholder="Enter your phone number" required [(ngModel)]="body.cEstablishedDate"
+                              [(ngModel)]="body.cEstablishedDate">
+                          </div>
+                          <div class="form-group py-2">
+                            <label for="altPhone"style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Phone</label>
+                            <input type="text" class="form-control" id="altPhone"
+                              placeholder="Enter your alternative phone number" name="aphone" [(ngModel)]="body.cContact">
+                          </div>
+                          <div class="form-group py-2">
+                            <label for="profilePicture"style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Comapany Picture</label>
+                            <input type="file" value="recruiterimg" id="profilePicture" name="pic" accept="image/*"
+                              (change)="onFileSelect($event)">
+                          </div>
+                          <div class="form-group py-2">
+                            <label for="altPhone"style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Website Url</label>
+                            <input type="text" class="form-control" id="curl"
+                              placeholder="Enter your alternative phone number" name="aphone" [(ngModel)]="body.cUrl">
+                          </div>
+                          <button type="submit"style="font-family: 'Courier New', Courier, monospace; font-weight: 600;" class="btn btn-warning w-100 py-3 px-3"
+                            (click)="postCompanyRegistration()">Register</button>
+                        </div>

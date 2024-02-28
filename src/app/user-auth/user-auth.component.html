@@ -1,0 +1,279 @@
+<nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="" style="font-family: 'Courier New', Courier, monospace;"><b>Job Finder</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown text-nowrap">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Recuiters
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+
+            <li><a class="dropdown-item" href="#" routerLink="/RecruiterLogin">Login</a></li>
+            <li><a class="dropdown-item" href="#" routerLink="/RecruiterRegistration">Registration</a></li>
+
+          </ul>
+        </li>
+        <li class="nav-item dropdown text-nowrap">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Company
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+
+            <li><a class="dropdown-item" href="#" routerLink="/CompanyLogin">Login</a></li>
+            <li><a class="dropdown-item" href="#" routerLink="/CompanyRegistration">Registration</a></li>
+
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#">
+            About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <button class="btn0">Register</button>
+        <button class="btn1 mx-2">Login</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="card w-50" [@fadeIn]="!showLogin">
+    <!-- <div class="card-body"> -->
+    <!-- <ng-container *ngIf="!showLogin; else loginForm">
+        <h2 class="card-title">User Registration</h2>
+        <form #reg="ngForm" (ngSubmit)="user_registration()">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="NewUser.fname" id="name" required
+              minlength="3" maxlength="50">
+            <div *ngIf="reg.controls['name']?.invalid && (reg.controls['name']?.dirty || reg.controls['name']?.touched)"
+              class="invalid-feedback">
+              Name is required and must be between 3 and 50 characters.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="NewUser.Email" id="email" required email>
+            <div
+              *ngIf="reg.controls['email']?.invalid && (reg.controls['email']?.dirty || reg.controls['email']?.touched)"
+              class="invalid-feedback">
+              Please enter a valid email address.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="NewUser.Password" id="password"
+              required minlength="6" placeholder="must be at least 6 characters">
+            <div
+              *ngIf="reg.controls['password']?.invalid && (reg.controls['password']?.dirty || reg.controls['password']?.touched)"
+              class="invalid-feedback">
+              Password is required and must be at least 6 characters.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cpassword">Confirm Password:</label>
+            <input type="password" class="form-control" name="cpassword" id="cpassword" [(ngModel)]="confirmPassword"
+              required minlength="6">
+            <div
+              *ngIf="reg.controls['cpassword']?.invalid && (reg.controls['cpassword']?.dirty || reg.controls['cpassword']?.touched)"
+              class="invalid-feedback">
+              Confirm Password is required and must match the password.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" class="form-control" name="phone" [(ngModel)]="NewUser.Phone1" id="phone" required
+              pattern="[0-9]{10}">
+            <div
+              *ngIf="reg.controls['phone']?.invalid && (reg.controls['phone']?.dirty || reg.controls['phone']?.touched)"
+              class="invalid-feedback">
+              Please enter a valid 10-digit phone number.
+            </div>
+          </div>
+          <div class="d-flex justify-content-center mt-3">
+            <button class="btn btn-primary w-50" type="submit" [disabled]="reg.invalid">Create Account</button>
+          </div>
+        </form>
+        <a class="link" style="text-decoration: none;" (click)="openLogin()" style="color:black;">Already have an
+          account? Login here</a>
+
+      </ng-container> -->
+
+    <!-- Login Form -->
+
+    <ng-template #loginForm="">
+      <h2 class="card-title">User Login</h2>
+      <form>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" name="email" [(ngModel)]="NewLoginUser.Email" id="email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="NewLoginUser.Password" id="password">
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+          <button class="btn btn-primary w-50" type="submit" (click)="user_login()">Login</button>
+        </div>
+      </form>
+      <a class="link " style="text-decoration: none;" (click)="openSignLogin()" style="color:black;">Create Account
+        Now</a>
+    </ng-template>
+    <!-- </div> -->
+  </div>
+</div>
+
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1">Register</p>
+                <ng-container *ngIf="!showLogin; else loginForm">
+                  <!-- Registeration -->
+                  <form #reg="ngForm" (ngSubmit)="user_registration()" class="mx-1 mx-md-4">
+                    <div class="form-group">
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="text" class="form-control" name="name" [(ngModel)]="NewUser.fname" id="name"
+                            required minlength="3" maxlength="50">
+                          <label class="form-label" for="form3Example1c">Your Name</label>
+                          <div
+                            *ngIf="reg.controls['name']?.invalid && (reg.controls['name']?.dirty || reg.controls['name']?.touched)"
+                            class="invalid-feedback">
+                            Name is required and must be between 3 and 50 characters.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="email" class="form-control" name="email" [(ngModel)]="NewUser.Email" id="email"
+                            required email>
+                          <!-- <input type="email" id="form3Example3c" class="form-control" /> -->
+                          <label class="form-label" for="form3Example3c">Your Email</label>
+                          <div
+                            *ngIf="reg.controls['email']?.invalid && (reg.controls['email']?.dirty || reg.controls['email']?.touched)"
+                            class="invalid-feedback">
+                            Please enter a valid email address.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="form-group">
+                      <label for="password">Password:</label>
+                      <input type="password" class="form-control" name="password" [(ngModel)]="NewUser.Password" id="password"
+                        required minlength="6" placeholder="must be at least 6 characters">
+                      <div
+                        *ngIf="reg.controls['password']?.invalid && (reg.controls['password']?.dirty || reg.controls['password']?.touched)"
+                        class="invalid-feedback">
+                        Password is required and must be at least 6 characters.
+                      </div>
+                    </div> -->
+                    <div class="form-group">
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="password" class="form-control" name="password" [(ngModel)]="NewUser.Password"
+                            id="password" required minlength="6" placeholder="must be at least 6 characters">
+                          <label class="form-label" for="form3Example4c">Password</label>
+                          <div
+                            *ngIf="reg.controls['password']?.invalid && (reg.controls['password']?.dirty || reg.controls['password']?.touched)"
+                            class="invalid-feedback">
+                            Password is required and must be at least 6 characters.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="password" class="form-control" name="cpassword" id="cpassword"
+                            [(ngModel)]="confirmPassword" required minlength="6">
+                          <label class="form-label" for="form3Example4cd">Repeat your password</label>
+                          <div
+                            *ngIf="reg.controls['password']?.invalid && (reg.controls['password']?.dirty || reg.controls['password']?.touched)"
+                            class="invalid-feedback">
+                            Password is required and must be at least 6 characters.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="form-group">
+                      <label for="cpassword">Confirm Password:</label>
+                      <input type="password" class="form-control" name="cpassword" id="cpassword" [(ngModel)]="confirmPassword"
+                        required minlength="6">
+                      <div
+                        *ngIf="reg.controls['cpassword']?.invalid && (reg.controls['cpassword']?.dirty || reg.controls['cpassword']?.touched)"
+                        class="invalid-feedback">
+                        Confirm Password is required and must match the password.
+                      </div>
+                    </div> -->
+                    <div class="form-group">
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+
+                          <input type="tel" class="form-control" name="phone" [(ngModel)]="NewUser.Phone1" id="phone"
+                            required pattern="[0-9]{10}">
+
+                          <label for="phone">Phone:</label>
+                          <div
+                            *ngIf="reg.controls['phone']?.invalid && (reg.controls['phone']?.dirty || reg.controls['phone']?.touched)"
+                            class="invalid-feedback">
+                            Please enter a valid 10-digit phone number.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                      <button class="btn btn-primary w-50" type="submit" (click)="openLogin()" [disabled]="reg.invalid">Create
+                        Account</button>
+                    </div>
+
+                  </form>
+
+                  <a class="link" style="text-decoration: none;" (click)="openLogin()" style="color:black;">Already have
+                    an
+                    account? Login here</a>
+
+                </ng-container>
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                  class="img-fluid" alt="Sample image">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

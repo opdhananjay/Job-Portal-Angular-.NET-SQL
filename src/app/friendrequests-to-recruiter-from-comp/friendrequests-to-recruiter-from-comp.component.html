@@ -1,0 +1,38 @@
+
+
+<h1 class="text-center">Accepted Recruites</h1>
+
+<h1 class="text-center bg-primary-subtle">Recruiter Accepted Please Conatct Below Recruiters For Manage Your Company</h1>
+
+<div class="container">
+    <div class="card company-card mt-4" *ngFor="let a of rec">
+        <div class="row no-gutters">
+            <div class="col-md-3">
+                <img src="{{a.rPicUrl}}" class="card-img company-logo" alt="Company Logo">
+            </div>
+            <div class="col-md-3">
+                <div class="card-body company-details">
+                    <h5 class="card-title company-name">{{a.rName}}</h5>
+                    <p class="card-text company-email">{{a.rEmail}} - {{a.rPhone1}}</p>
+                    <p>ID:{{a.rid}}</p>
+                    <p>Phone  - {{a.rPhone1
+                    }}</p>
+
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-items-center ">
+                <h5>{{a.rRegisterDate}} - {{a.rLastLogin}}</h5>
+            </div>
+            <div class="col-md-3 d-flex align-items-center ">
+                <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="Accept_friend_Request(a.rid)">Accept</button>
+                <button class="btn btn-primary">Accept</button>
+                -->
+           
+</div>
+
+
+
+<!-- Bootstrap JS and Popper.js scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

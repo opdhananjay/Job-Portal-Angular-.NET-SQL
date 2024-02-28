@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for card design and animation */
+        .horizontal-card {
+            margin: 20px;
+            animation: fadeIn 1s ease-in-out; 
+        }
+
+        /* Keyframes for fadeIn animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Additional styling for horizontal layout */
+        .horizontal-card .card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href=""><b>Job Finder</b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item dropdown text-nowrap">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Recuiters
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                   
+                    <li><a class="dropdown-item" href="#" routerLink="/RecruiterLogin">Login</a></li>
+                    <li><a class="dropdown-item" href="#" routerLink="/RecruiterRegistration">Registration</a></li>
+                   
+                  </ul>
+              </li>
+              <li class="nav-item dropdown text-nowrap">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Company
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                   
+                    <li><a class="dropdown-item" href="#" routerLink="/CompanyLogin">Login</a></li>
+                    <li><a class="dropdown-item" href="#" routerLink="/CompanyRegistration">Registration</a></li>
+                   
+                  </ul>
+              </li>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#">
+                  About
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <button class="btn0">Register</button>
+              <button class="btn1 mx-2">Login</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="row">
+            <!-- Repeat this card for each job item -->
+            <div class="col-md-6" *ngFor="let a of job">
+                <div class="card horizontal-card">
+                    <div class="card-body" style="background-color:beige; margin: 1%;">
+                        <h5 class="card-title px-4 py-2" style="font-size:100%;color: aliceblue; background-color:rgb(4, 104, 104); font-family: 'Courier New', Courier, monospace;"><u><i><b>{{a.jobdesc}}-{{a.jobId}}</b></i></u></h5>
+                        <h6 class="card-subtitle mb-4 text-muted" >ABC Inc.</h6>
+                        <p class="card-text">
+                            <strong>Location:</strong> {{a.jobCity}}<br>
+                            <strong>Industry:</strong> {{a.industryType}}<br>
+                            <strong>Department:</strong> {{a.department}}<br>
+                            <strong>Qualification:</strong>{{a.jobQualification}}<br>
+                            <strong>Experience:</strong> {{a.jobMinExperience}} - {{a.jobMaxExperience}} years<br>
+                            <strong>Salary:</strong> {{a.jobMinSalary}} - {{a.jobMaxSalary}}<br>
+                            <strong>Employment Type:</strong> {{a.employementType}}<br>
+                            <strong>Position Date:</strong> {{a.positionDate}}<br>
+                            <strong>Expiration Date:</strong> {{a.expirationdate}}
+                        </p>
+                        <p class="card-text">We are looking for a skilled Software Engineer...</p>
+                        <a  class="btn btn-primary " style="width: 50%;justify-items: center;" (click)="Apply_For_job(a.jobId)" >Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional, for advanced features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+

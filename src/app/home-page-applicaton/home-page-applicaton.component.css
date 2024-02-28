@@ -1,0 +1,47 @@
+@media (max-width:576px) {
+    .navbar-nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+}
+
+#collapsibleNavbar{
+margin-right:10%;
+}
+
+.nav-item{
+padding: 3%;
+}
+
+
+#hero {
+    background-color: #fff; /* Add your desired background color */
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Optional: Add a box shadow for a nice effect */
+  }
+
+  #hero h1 {
+    color: #007bff; /* Change the text color to a desired color, here it's a shade of blue */
+    font-size: 36px; /* Adjust the font size */
+    font-weight: bold; /* Optional: Adjust the font weight */
+  }
+
+  #hero h2 {
+    color: #495057; /* Change the text color to a desired color, here it's a shade of gray */
+    font-size: 24px; /* Adjust the font size */
+    font-weight: normal; /* Optional: Adjust the font weight */
+  }
+
+  .company-card {
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .company-logo {
+    max-width: 100%;
+    height: auto;
+  }

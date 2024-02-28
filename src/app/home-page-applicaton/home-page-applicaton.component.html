@@ -1,0 +1,550 @@
+
+ <!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Carter+One&family=Dancing+Script&family=Poppins:wght@300;700&family=Rubik:ital,wght@1,300&family=Shizuru&display=swap"
+    rel="stylesheet">
+  <title>Landing page</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href=""><b>Job Finder</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown text-nowrap">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Recuiters
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+               
+                <li><a class="dropdown-item" href="#" routerLink="/RecruiterLogin">Login</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/RecruiterRegistration">Registration</a></li>
+               
+              </ul>
+          </li>
+          <li class="nav-item dropdown text-nowrap">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Company
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+               
+                <li><a class="dropdown-item" href="#" routerLink="/CompanyLogin">Login</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/CompanyRegistration">Registration</a></li>
+               
+              </ul>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button class="btn0" routerLink="/Create-login" *ngIf="!check"  (click)="change('Register')">Register</button>
+          <button class="btn1 mx-2" (click)="openLogin()">Login</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main section -->
+  <section class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <h1>Find The Most Exciting <br>
+            Startup Jobs
+          </h1>
+          <input type="text" name="" id="" placeholder="Job tiltle Or Keyword">
+          <button class="btn2 mt-5">Find Job</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Resume section -->
+  <section class="resume py-5 text-center text-white">
+    <div class="container py-5">
+      <div class="row py-5">
+        <div class="col-lg-10 m-auto">
+          <p calss="pb-3">FEATURED TOURS PACKAGES</p>
+          <h1>Make a difference with Your Online Resume!!</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-5 m-auto">
+          <button class="btn3">Upload Your CV</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Job Section -->
+  <section class="job">
+    <div class="container py-5">
+      <div class="row py-5">
+        <div class="col-lg-7">
+          <p class="red pt-5">What we are doing</p>
+          <h1>24K Talented people are getting Jobs</h1>
+          <p class=" py-4" style="font-weight: 700;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+            Placeat tempore facilis quasi cum dolore, consectetur totam <br>
+            cumque obcaecati veniam quia. doloremque quibusdam totam <br> maiores. Dolorem, sapiente
+            earum assumenda ipsa dolore alias placeat.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Accusantium
+            blanditiis aliquid possimus minus! Aut, commodi porro,<br>doloribus doloremque
+            deleniti quisquam voluptate sint in nostrum laudantium <br>fugiat illum corporis
+            explicabo ducimus repellendus dicta quia modi eum. Unde, <br>ducimus maiores minus
+            itaque laudantium cupiditate nesciunt obcaecati placeat <br> quisquam beatae! Ullam,
+            blanditiis recusandae.</p>
+          <button class="btn4 mt-3">POST A JOB</button>
+        </div>
+        <div class="col-lg-5">
+          <img src="../../assets/Home_Images/images/men.jpg" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apply section -->
+  <section class="apply py-5">
+    <div class="container py-5 text-center">
+      <p class="red">Apply Process</p>
+      <h1 class="text-white">How it works</h1>
+      <div class="row py-5">
+        <div class="col-lg-4">
+          <div class="card p-3">
+            <div class="card-body text-center">
+              <div class="circle pt-3 mb-3">
+                <img src="../../assets/Home_Images/images/cate4.JPG" class="img-fluid" alt="">
+              </div>
+              <h2>1. Search a Job</h2>
+              <p class="py-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit iure modi maiores
+                nostrum provident fuga voluptates itaque libero! Delectus, vero.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card p-3">
+            <div class="card-body text-center">
+              <div class="circle pt-3 mb-3">
+                <img src="../../assets/Home_Images/images/cate3.JPG" class="img-fluid" alt="">
+              </div>
+              <h2>2. Apply for Job</h2>
+              <p class="py-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit iure modi maiores
+                nostrum provident fuga voluptates itaque libero! Delectus, vero.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card p-3">
+            <div class="card-body text-center">
+              <div class="circle pt-3 mb-3">
+                <img src="../../assets/Home_Images/images/cate2.JPG" class="img-fluid" alt="">
+              </div>
+              <h2>1. Search a Job</h2>
+              <p class="py-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit iure modi maiores
+                nostrum provident fuga voluptates itaque libero! Delectus, vero.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- carousel section -->
+  <section class="slider py-5">
+    <div class="container text-center py-5">
+      <div class="row">
+        <div class="col-lg-9 m-auto">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item ">
+                <img src="../../assets/Home_Images/images/Capture.JPG" class="img-fluid avatar mb-4" alt="...">
+                <h4>Margaret Lawson</h4>
+                <p>Creative Director</p>
+                <p class="perac">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur culpa quam dolorem
+                  aspernatur voluptatum ipsa quibusdam rem harum accusantium id.</p>
+                <button class="btn5 mt-3">Contact</button>
+              </div>
+              <div class="carousel-item active">
+                <img src="../../assets/Home_Images/images/car2.JPG" class="img-fluid avatar mb-4" alt="...">
+                <h4>Margaret Lawson</h4>
+                <p>Creative Director</p>
+                <p class="perac">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur culpa quam dolorem
+                  aspernatur voluptatum ipsa quibusdam rem harum accusantium id.</p>
+                <button class="btn5 mt-3">Contact</button>
+              </div>
+              <div class="carousel-item ">
+                <img src="../../assets/Home_Images/images/car2.JPG" class="img-fluid avatar mb-4" alt="...">
+                <h4>Margaret Lawson</h4>
+                <p>Creative Director</p>
+                <p class="perac">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur culpa quam dolorem
+                  aspernatur voluptatum ipsa quibusdam rem harum accusantium id.</p>
+                <button class="btn5 mt-3">Contact</button>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer section -->
+  <!-- Footer section -->
+  <section class="footer pt-5">
+    <div class="container-fluid py-5">
+      <div class="row">
+        <div class="col-lg-10 m-auto">
+          <div class="row">
+            <div class="col-lg-3">
+              <h3 class="py-4">About Us</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, fugit!</p>
+            </div>
+            <div class="col-lg-3">
+              <h3 class="py-4">Contact Info</h3>
+              <p>Address:Acuity Educare Pvt Ltd</p>
+              <p class="link">Phone:+8890 44339899</p>
+              <p class="link">Email:info@gmail.com</p>
+            </div>
+            <div class="col-lg-3">
+              <h3 class="py-4">Important link</h3>
+              <div class="link">View Projects</div>
+              <div class="link">Contact Us</div>
+              <div class="link">Testimonial</div>
+              <div class="link">Properties</div>  
+              <div class="link">Support</div>                 
+            </div>
+            <div class="col-lg-3">
+              <h3 class="py-4">Newsletter </h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, fugit!</p>
+              <input type="text" placeholder="Enter your Email" name="" id="">
+              <button>Go</button>
+            </div>
+          </div>
+          <hr>
+          <p class="py-4">Copyright 020211 All rights reserved | This website is under <span class="red">srishti singh</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .navbar-brand {
+    font-size: 2rem;
+    color: blue;
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .nav-link {
+    color: rgb(10, 10, 94);
+  }
+
+  .nav-link:hover {
+    color: red;
+    transition: 0.4s;
+  }
+
+  .nav-item {
+    color: rgb(7, 7, 78);
+    font-weight: 500;
+    padding-left: 35px;
+  }
+
+  .btn0 {
+    height: 52px;
+    width: 130px;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: rgb(248, 83, 83);
+  }
+
+  .btn0:hover {
+    background-color: rgb(214, 11, 11);
+    transition: all 0.3s;
+
+  }
+
+  .btn1 {
+    height: 52px;
+    width: 130px;
+    background-color: transparent;
+    color: rgb(248, 20, 20);
+    outline: none;
+    border: 2px solid rgb(248, 20, 20);
+  }
+
+  .btn1:hover {
+    background-color: rgb(214, 11, 11);
+    transition: all 0.3s;
+    color: white;
+    border: none;
+    outline: none;
+  }
+
+  .main {
+    background-image: url(../../assets/Home_Images/images/main1copy.jpg);
+    background-size: cover;
+    min-height: 95vh;
+    width: 100%;
+  }
+
+  .main h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgb(7, 7, 78);
+  }
+
+  .main input {
+    height: 71px;
+    width: 70%;
+    border: none;
+    outline: none;
+    padding: 15px;
+
+
+
+  }
+
+  .btn2 {
+    height: 70px;
+    width: 25%;
+    background-color: rgb(248, 20, 20);
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-left: -4px;
+  }
+
+  .btn2:hover {
+    background-color: rgb(214, 11, 11);
+    transition: all 0.4s;
+  }
+
+  .red {
+    color: red;
+  }
+
+  .category h1 {
+    font-size: 3.5rem;
+    color: rgb(7, 7, 78);
+  }
+
+  .category .card:hover {
+    color: red;
+    cursor: pointer;
+    transition: all 0.4s;
+    box-shadow: 2px 5px 22px -16px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 5px 22px -16px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 5px 22px -16px rgba(0, 0, 0, 0.75);
+  }
+
+  .btn3 {
+    height: 70px;
+    width: 70%;
+    border: 1px solid rgb(130 130 231);
+    background: transparent;
+    border-radius: 5px;
+    color: rgb(130 130 231);
+    transition: all 0.4s;
+  }
+
+  .btn3:hover {
+    background: rgb(130 130 231);
+    color: white;
+    border: none;
+    outline: none;
+    transition: all 0.4s;
+    border-radius: 8px;
+
+
+  }
+
+  .resume {
+    background-image: linear-gradient(rgba(4, 11, 75, 0.719), rgba(4, 26, 100, 0.73)), url(../../assets/Home_Images/images/woman.jpg);
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
+  }
+
+  .resume h1 {
+    font-size: 3.8rem;
+  }
+
+  .job h1 {
+    font-size: 3.5rem;
+    color: rgb(7, 7, 78);
+  }
+
+  .btn4 {
+    height: 60px;
+    width: 30%;
+    outline: none;
+    border: none;
+    background-color: rgb(243, 73, 73);
+    color: white;
+    transition: all 0.4s;
+    border-radius: 8px;
+  }
+
+  .btn4:hover {
+    background-color: rgb(214, 11, 11);
+    color: white;
+    transition: all 0.4s;
+    border: none;
+    outline: none;
+  }
+
+  .apply {
+    background-image: url(../../assets/Home_Images/images/cool-background.png);
+    background-size: cover;
+    height: 110vh;
+    width: 100%;
+  }
+
+  .apply .card {
+    background-color: rgba(4, 26, 100, 0.801);
+    color: white;
+  }
+
+  .circle {
+    height: 100px;
+    width: 100px;
+    background: white;
+    border-radius: 50%;
+    display: inline;
+  }
+
+  .circle img {
+    border-radius: 50%;
+
+  }
+
+  .avatar {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+  }
+
+  .perac {
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+
+  .btn5 {
+    height: 60px;
+    width: 30%;
+    outline: none;
+    border: none;
+    background: rgb(243, 73, 73);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+
+  .btn5:hover {
+    background: rgba(214, 11, 11);
+    border: none;
+    outline: none;
+    transition: all 0.4s;
+
+  }
+  .footer{
+    background: #121626;
+    color: white;
+  }
+  .footer p{
+    margin: 0;
+    color: #6969b6; ;
+  }
+  .footer{
+    background: #121626;
+    color: white;
+  }
+  .footer p{
+    margin: 0;
+    color: #6969b6; ;
+  }
+  .link{
+    color: #6b6b72;
+    transition: all  0.4s;
+  }
+  .link:hover{
+   color:#ff2962;
+   padding-left: 10px;
+   transition: all  0.4s;
+   cursor: pointer;
+  }
+  .footer input{
+    height:45px ;
+    width: 70%;
+    padding: 10px 10px ;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+  }
+  .footer button{
+    height: 45px;
+    width: 20%;
+    border:none;
+    outline: none;
+    padding-left: -12px;
+    border-top: 1px solid #ff2962;
+    background: #ff2962;
+    color: white;
+    margin-top: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+</style>
+
+</html>

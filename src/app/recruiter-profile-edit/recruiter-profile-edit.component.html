@@ -1,0 +1,120 @@
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="">Job Finder</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <button class="btn0 mx-5 mt-2" style="border-radius: 4rem; background-color: #6C757D; color: #fff;" (click)="startProgressBar()" (click)="updateProfile()">
+        Update Profile
+      </button>
+
+      <button class="btn0 mx-5 mt-2" style="border-radius: 4rem; background-color: #6C757D; color: #fff;" (click)="startProgressBar()" routerLink="/receiveFriendReq" >
+        Friend Request's
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Registration Form -->
+  <section class="vh-100">
+    <div class="container py-3" style="background-color: #F8F9FA;">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px; animation: fadeIn 1s;">
+            <div class="card-body p-4 p-md-5" style="background-color: #fff; border-radius: 4rem;">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5"
+                style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: #343A40;">
+                Profile
+              </h3>
+              <form #form="ngForm" style="animation: slideInRight 1s;">
+                <!-- ... (rest of the form) ... -->
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <!-- Recruiter's Name -->
+                      <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                        <div class="form-outline">
+                          <label class="form-label" for="firstName">Name</label>
+                          <input type="text" name="rName" class="form-control form-control-lg" [value]="recruiterinfo?.rName"
+                            [(ngModel)]="updatedname">
+                        </div>
+                      </div>
+                    </div>
+    
+                    <div class="col-md-3 border-right">
+                      <!-- Profile Picture Upload -->
+                      <span>
+                        <img class="rounded-circle mt-5" width="150px" [src]="recruiterinfo.rPicUrl" (click)="openFileInput.click()" >
+                        <i class="fa fa-upload" style="width: 100px;" aria-hidden="true">Upload</i>
+                        <input type="file" id="profilePicture" name="pic" accept="image/*" style="display: none;" (change)="onFileSelected($event)" #openFileInput>
+                      </span>
+                    
+                      <!-- Progress Bar -->
+                      <div class="progress-container" *ngIf="showProgressBar">
+                        <div class="progress-bar"></div>
+                      </div>
+                      </div>
+    
+                    <div class="col-md-6 mb-4">
+                      <!-- Primary Phone -->
+                      <div class="form-outline">
+                        <input type="text" class="form-control form-control-lg" name="rPhone1" [(ngModel)]="updatephone1" />
+                        <label class="form-label" for="lastName">Primary Phone</label>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Alternative Number -->
+                  <div class="row">
+                    <div class="col-md-6 mb-4 d-flex align-items-center">
+                      <div class="form-outline datepicker w-100">
+                        <input type="text" class="form-control form-control-lg" name="p1" [(ngModel)]="updatephone2" />
+                        <label for="Alternative Number" class="form-label">Alternative Number</label>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Registered Date and Email -->
+                  <div class="row">
+                    <div class="col-md-6 mb-4 pb-2">
+                      <div class="form-outline">
+                        <input type="text" id="emailAddress" class="form-control form-control-lg"
+                          value="{{recruiterinfo.rRegisterDate}}" />
+                        <label class="form-label">Registered Date</label>
+                      </div>
+                    </div>
+    
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" class="form-control form-control-lg" placeholder="{{recruiterinfo.rEmail}}"
+                          readonly />
+                        <label class="form-label" for="lastName">Email</label>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Password -->
+                  <div class="row">
+                    <div class="col-md-6 mb-4 pb-2">
+                      <div class="form-outline">
+                        <input type="text" class="form-control form-control-lg"
+                          placeholder="{{recruiterinfo.rPassword}}" [value]="recruiterinfo?.rPassword" name="rPassword"
+                          [(ngModel)]="updatedpassword" />
+                        <label class="form-label">Password</label>
+                      </div>
+                    </div>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- External Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  

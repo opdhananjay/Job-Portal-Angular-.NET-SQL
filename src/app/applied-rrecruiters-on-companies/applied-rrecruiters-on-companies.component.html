@@ -1,0 +1,68 @@
+<p>applied-rrecruiters-on-companies works!</p>
+
+<h1 class="text-center"> Applied Recruites</h1>
+
+
+<div class="container">
+    <div class="card company-card mt-4" *ngFor="let a of AppliedRecruiters">
+        <div class="row no-gutters">
+            <div class="col-md-3">
+                <img src="{{a.rPicUrl}}" class="card-img company-logo" alt="Company Logo">
+            </div>
+            <div class="col-md-3">
+                <div class="card-body company-details">
+                    <h5 class="card-title company-name">{{a.rName}}</h5>
+                    <p class="card-text company-email">{{a.rEmail}} - {{a.rPhone1}}</p>
+                    <p>ID:{{a.rid}}</p>
+
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-items-center ">
+                <h5>{{a.rRegisterDate}} - {{a.rLastLogin}}</h5>
+            </div>
+            <div class="col-md-3 d-flex align-items-center ">
+                <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="Accept_friend_Request(a.rid)">Accept</button> -->
+                <button class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal_' + a.rid" (click)="Accept_friend_Request(a.rid)">Accept</button>
+               
+            </div>
+            <div class="modal fade" [id]="'exampleModal_' + a.rid" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Assign Credential</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        
+
+                        <div class="form-group">
+                            <label for="inputEmail">Email:</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email" [(ngModel)]="AssignMail">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword">Password:</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Enter your password" [(ngModel)]="AssignPassword">
+                        </div>
+                        <!-- Hidden fields for cid and rid -->
+                        <input type="hidden" id="inputCid" [(ngModel)]="AssignCid">
+                        <input type="hidden"  id="inputRid" [(ngModel)]="AssignRid">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="credential_applied(a.rid)">Save changes</button>
+                      <!-- <button class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal_' + a.rid" (click)="Accept_friend_Request(a.rid)">Accept</button> -->
+
+                      <!-- <button type="button" class="btn btn-primary" (click)="credential_applied(a.rid)">Save changes</button> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Bootstrap JS and Popper.js scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
